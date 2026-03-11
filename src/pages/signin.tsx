@@ -1,54 +1,18 @@
-import { useState } from "react";
+import { Button, Input } from 'antd';
+export const Signin = () => {
+    return (
+        <div className='w-[30%] bg-gray-500 h-auto mx-auto my-[30px]' >
+            <h1 className='text-white font-bold text-3xl items-center flex justify-center p-2'>Đăng Nhập</h1>
+            <div className='w-full h-[200px] p-5 flex flex-col justify-between'>
+                <Input className='' placeholder="User name" />
+                <Input className='' placeholder="Pass" />
+                <div className='flex items-center justify-center'>
+                    <Button type="default" ghost>
+                        Submit
+                    </Button>
+                </div>
 
-function Register() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-
-    const user = {
-      name,
-      email,
-      password,
-    };
-
-    console.log(user);
-  };
-
-  return (
-    <div className="max-w-md mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-4">Đăng ký</h2>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          placeholder="Name"
-          className="w-full border p-2 rounded"
-          onChange={(e) => setName(e.target.value)}
-        />
-
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full border p-2 rounded"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full border p-2 rounded"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button className="bg-blue-500 text-white px-4 py-2 rounded">
-          Submit
-        </button>
-      </form>
-    </div>
-  );
+            </div>
+        </div>
+    )
 }
-
-export default Register;

@@ -5,33 +5,40 @@ export const Userlist = () => {
     const data = [
         {
             key: '1',
-            name: 'User 1',
-            email: 'a@gmail.com',
-            role: 'User',
+            id: '1',
+            name: 'Tuan ngu',
+            age: '36',
+            major: 'Lap trinh html'
         },
         {
             key: '2',
-            name: 'User 2',
-            email: 'a@gmail.com',
-            role: 'Admin',
+            id: '2',
+            name: 'Hao Sua',
+            age: '63',
+            major: 'Lap trinh css'
         },
     ];
 
     const columns = [
+        {
+            title: 'id',
+            dataIndex: 'id',
+            key: 'id',
+        },
         {
             title: 'Name',
             dataIndex: 'name',
             key: 'name',
         },
         {
-            title: 'Email',
-            dataIndex: 'email',
-            key: 'email',
+            title: 'Age',
+            dataIndex: 'age',
+            key: 'age',
         },
         {
-            title: 'Role',
-            dataIndex: 'role',
-            key: 'role',
+            title: 'Major',
+            dataIndex: 'major',
+            key: 'major',
         },
     ];
     return (
