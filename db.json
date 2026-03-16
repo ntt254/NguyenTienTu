@@ -1,4 +1,34 @@
 {
-  "products": [],
+  "stories": [
+    {
+      "title": "ádasd",
+      "id": 1
+    },
+    {
+      "title": "ádasd",
+      "id": 2
+    },
+    {
+      "title": "ádasd",
+      "author": "ádasd",
+      "image": "ád",
+      "description": "ádasd",
+      "id": 3
+    }
+  ],
+  "categories": [
+    {
+      "title": "ádasd",
+      "description": "ádasd",
+      "active": true,
+      "id": 1
+    },
+    {
+      "title": "ádasd3123",
+      "description": "1111",
+      "active": true,
+      "id": 2
+    }
+  ],
   "users": []
 }
