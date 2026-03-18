@@ -4,6 +4,7 @@ import { Signin } from "./signin";
 import { Signup } from "./signup";
 import { Userlist } from "./userlist";
 import Addform from "./addform";
+import Lab5 from "./Lab5";
 const Dashboard = () => {
     return (
         <>
@@ -22,6 +23,9 @@ const Dashboard = () => {
                         </Link>
                         <Link to="/add" className="hover:text-gray-200">
                             Thêm mới
+                        </Link>
+                        <Link to="/lab5" className="hover:text-gray-200">
+                            Lab5
                         </Link>
                     </div>
 
@@ -44,6 +48,7 @@ const Dashboard = () => {
                 <Route path="/signin" element={<Signin></Signin>}></Route>
                 <Route path="/userlist" element={<Userlist></Userlist>}></Route>
                 <Route path="/add" element={<Addform></Addform>}></Route>
+                <Route path="/lab5" element={<Lab5></Lab5>}></Route>
             </Routes>
             <Toaster />
         </>
