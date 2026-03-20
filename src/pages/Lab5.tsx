@@ -2,6 +2,7 @@ import {useQuery, useQueryClient, useMutation} from "@tanstack/react-query";
 import {Spin, Table, Image, Button, message} from "antd";
 import {DeleteOutlined} from "@ant-design/icons";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const f = async () => (await axios.get("http://localhost:3000/stories")).data;
 const d = async (id: number | string) => (await axios.delete(`http://localhost:3000/stories/${id}`)).data;
@@ -35,7 +36,9 @@ const Lab5 = () => {
     {title: "Tác giả", dataIndex: "author", key: "author"},
     {title: "Mô tả", dataIndex: "description", key: "description"},
     {title: "Created At", dataIndex: "createdAt", key: "createdAt", render: (v: string | number) => t(v)},
-    {title: "Action", key: "action", render: (_: any, r: any) => <Button danger icon={<DeleteOutlined />} onClick={() => m.mutate(r.id)}>Xóa</Button>},
+    {title: "Action", key: "action", render: (_: any, r: any) => 
+    <Button danger icon={<DeleteOutlined />} onClick={() => m.mutate(r.id)}>Xóa</Button>},
+    {title: "Sửa", key: "edit", render: ( _: any, r: any) => <Link to={`/edit/${r.id}`}>Sửa</Link> }
   ];
 
   if (isLoading) return <Spin />;
