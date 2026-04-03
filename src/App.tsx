@@ -1,9 +1,16 @@
 import Dashboard from "./pages/dashboard";
-
+import Header from "./components/Header";
+import { ThemeProvider } from "./context/ThemeContext";
+import { UserProvider } from "./context/UserContext";
 function App() {
   return (
     <div>
-      <Dashboard />
+      <ThemeProvider>
+        <UserProvider>
+          <Header />
+          <Dashboard />
+        </UserProvider>
+      </ThemeProvider>
     </div>
   );
 }
