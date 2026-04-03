@@ -36,5 +36,12 @@
       "id": 3
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "tientu123@gmail.com",
+      "password": "$2a$10$1ebCK0VCUcF3VvhRkU0PqO24UJouSfrWDX1pU48jhftCfRp8nvBKC",
+      "username": "anti8nh",
+      "id": 1
+    }
+  ]
 }

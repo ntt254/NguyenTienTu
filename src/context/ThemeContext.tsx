@@ -1,21 +1,22 @@
 import { createContext, useState } from "react";
-import { theme } from "antd";
+import { ConfigProvider, theme } from "antd";
 
-type ThemeContextType = {
-    isDark: boolean;
-    toggleTheme: () => void;
-};
+export const ThemeContext = createContext<any>(null);
 
-export const ThemeContext = createContext<ThemeContextType | null>(null);
+export function ThemeProvider({ children }: any) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-export const ThemeProvider = ({ children }: { children: any }) => {
-    const [isDark, setIsDark] = useState(false);
+  const toggleTheme = () => setIsDarkMode(!isDarkMode);
 
-    const toggleTheme = () => setIsDark(!isDark);
-
-    return (
-        <ThemeContext.Provider value={{ isDark, toggleTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    );
-};
+  return (
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+      <ConfigProvider
+        theme={{
+          algorithm: isDarkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+        }}
+      >
+        {children}
+      </ConfigProvider>
+    </ThemeContext.Provider>
+  );
+}
